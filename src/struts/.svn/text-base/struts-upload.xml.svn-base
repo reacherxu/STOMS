@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="upload" extends="json-default" namespace="/">		
+    	
+    	<action name="itemExportToExcel" class="ExportToExcelAction" method="itemExportToExcel">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		<action name="addoutlayExportToExcel" class="ExportToExcelAction" method="addoutlayExportToExcel">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		<action name="teacherExportToExcel" class="ExportToExcelAction" method="teacherExportToExcel">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		<action name="departmentExportToExcel" class="ExportToExcelAction" method="departmentExportToExcel">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		<action name="itemTypeExportToExcel" class="ExportToExcelAction" method="itemTypeExportToExcel">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+    	<action name="fileUpload" class="FileUploadAction" method="fileUpload">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="getDataToForm" class="FileUploadAction" method="getDataToForm">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="stateFundTwiceAdd" class="FileUploadAction" method="stateFundTwiceAdd">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="getDataToForm2" class="FileUploadAction" method="getDataToForm2">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="getDataToForm22" class="FileUploadAction" method="getDataToForm22">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="inAccountFileUpload" class="FileUploadAction" method="inAccountFileUpload">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="acquireItemPictureList" class="FileUploadAction" method="acquireItemPictureList">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="acquireInAccountPictureList" class="FileUploadAction" method="acquireInAccountPictureList">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="deleteItemPic" class="FileUploadAction" method="deleteItemPic">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="deleteInAccountPicture" class="FileUploadAction" method="deleteInAccountPicture">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+	</package>
+</struts>

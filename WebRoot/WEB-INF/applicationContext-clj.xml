@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	
+	<bean id="Nation863BudgetFormAction" class="com.stoms.action.Nation863BudgetFormAction"
+		scope="prototype">
+		<property name="nation863BudgetFormService">
+			<ref bean="Nation863BudgetFormService" />
+		</property>
+		
+		<property name="columnSumOutlayService">
+			<ref bean="ColumnSumOutlayService" />
+		</property>
+		
+		<property name="itemService">
+			<ref bean="ItemService" />
+		</property>
+		
+		<property name="a863DetailBudgetService">
+			<ref bean="A863DetailBudgetService" />
+		</property>
+		
+	</bean>
+	
+	
+	
+	<bean id="Nation863BudgetFormService" class="com.stoms.service.Nation863BudgetFormService"
+		scope="prototype">
+		
+		
+		<property name="itemDAO">
+			<ref bean="ItemDAO" />
+		</property>		
+		
+		<property name="a863itemDAO">
+			<ref bean="A863itemDAO" />
+		</property>
+		
+		<property name="a863njubudgetDAO">
+			<ref bean="A863njubudgetDAO" />
+		</property>
+		
+		<property name="a863cooperationBudgetDAO">
+			<ref bean="A863cooperationBudgetDAO" />
+		</property>
+		
+		<property name="a863sumDAO">
+			<ref bean="A863sumDAO" />
+		</property>
+		
+		<property name="a863outlayDAO">
+			<ref bean="A863outlayDAO" />
+		</property>
+		
+		<property name="a863remarkDAO">
+			<ref bean="A863remarkDAO" />
+		</property>	
+		
+	</bean>
+	
+	<bean id="SocialScienceFundBudgetService" class="com.stoms.service.SocialScienceFundBudgetService"
+		scope="prototype">
+		
+		
+		<property name="itemDAO">
+			<ref bean="ItemDAO" />
+		</property>
+		
+		<property name="socialScienceItemDAO">
+			<ref bean="SocialScienceItemDAO" />
+		</property>
+		
+		<property name="socialScienceNjubudgetDAO">
+			<ref bean="SocialScienceNjubudgetDAO" />
+		</property>
+		
+		<property name="socialScienceCooperationBudgetDAO">
+			<ref bean="SocialScienceCooperationBudgetDAO" />
+		</property>
+		
+		<property name="socialScienceApprovalBudgetDAO">
+			<ref bean="SocialScienceApprovalBudgetDAO" />
+		</property>
+		
+		<property name="socialScienceOutlayDAO">
+			<ref bean="SocialScienceOutlayDAO" />
+		</property>
+		
+		<property name="socialScienceRemarkDAO">
+			<ref bean="SocialScienceRemarkDAO" />
+		</property>
+		
+	</bean>
+	
+	<bean id="SocialScienceFundBudgetAction" class="com.stoms.action.SocialScienceFundBudgetAction"
+		scope="prototype">
+		
+		<property name="socialScienceFundBudgetService">
+			<ref bean="SocialScienceFundBudgetService" />
+		</property>
+		
+		<property name="itemService">
+			<ref bean="ItemService" />
+		</property>
+		
+		<property name="columnSumOutlayService">
+			<ref bean="ColumnSumOutlayService" />
+		</property>
+		
+	</bean>
+	
+</beans>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="usermanager" extends="json-default" namespace="/">
+		<action name="AdminPasswordChangeAction" class="AdminPasswordChangeAction" method="saveAdminPassword">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="testOperation" class="TestActionlyy" method="testOperation">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+	</package>
+</struts>    

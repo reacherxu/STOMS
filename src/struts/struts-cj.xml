@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="Teacher" extends="json-default"
+		namespace="/">
+		
+		<action name="isValidate" class="TeacherLoginAction" method="isValidate">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="redirectToTeacherMainPage" class="TeacherLoginAction" method="redirectToTeacherMainPage">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="userLogout" class="TeacherLoginAction" method="userLogout">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="adminLogout" class="TeacherLoginAction" method="adminLogout">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="superAdminLogout" class="TeacherLoginAction" method="superAdminLogout">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="acquireTeacherInfo" class="TeacherInfoMaintanceAction" method="acquireTeacherInfo">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="acquireAdminInfo" class="TeacherInfoMaintanceAction" method="acquireAdminInfo">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="saveTeacherInfo" class="TeacherInfoMaintanceAction" method="saveTeacherInfo">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="saveAdminInfo" class="TeacherInfoMaintanceAction" method="saveAdminInfo">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="acquireUserAuthorizationInfo" class="TeacherInfoMaintanceAction" method="acquireUserAuthorizationInfo">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="acquireAllTeacherTitles" class="TeacherTitleMaintainceAction" method="acquireAllTeacherTitles">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="addNewTitle" class="TeacherTitleMaintainceAction" method="addNewTitle">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+	
+		<action name="deleteTitle" class="TeacherTitleMaintainceAction" method="deleteTitle">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="updateTitle" class="TeacherTitleMaintainceAction" method="updateTitle">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="findAllUnapprovedItems" class="ProjectRegistrationAction" method="findAllUnapprovedItems">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="acquireInfoToInitializePage" class="ProjectRegistrationAction" method="acquireInfoToInitializePage">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="saveProjectRegistrationInfo" class="ProjectRegistrationAction" method="saveProjectRegistrationInfo">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="submitProjectRegistrationInfo" class="ProjectRegistrationAction" method="submitProjectRegistrationInfo">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="judgeWhetherHavedBudgetInfo" class="ProjectRegistrationAction" method="judgeWhetherHavedBudgetInfo">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="deleteRelatedBudgetOfThisItem" class="ProjectRegistrationAction" method="deleteRelatedBudgetOfThisItem">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="createCardIDForCrossItem" class="ProjectRegistrationAction" method="createCardIDForCrossItem">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="acquireAllDepartmentInfo" class="DepartmentMaintainceAction" method="acquireAllDepartmentInfo">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="addNewDepartment" class="DepartmentMaintainceAction" method="addNewDepartment">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="deleteSelectedDepartment" class="DepartmentMaintainceAction" method="deleteSelectedDepartment">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="modifyDepartment" class="DepartmentMaintainceAction" method="modifyDepartment">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="acquireOneDepartmentInfoByPK" class="DepartmentMaintainceAction" method="acquireOneDepartmentInfoByPK">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>	
+		<action name="acquireOneDepartmentInfoByID" class="DepartmentMaintainceAction" method="acquireOneDepartmentInfoByID">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="accquireAddOutlayByAddOutlayPKAndItemID" class="AddOutlayAction" method="accquireAddOutlayByAddOutlayPKAndItemID">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="saveAddOutlayInfo" class="AddOutlayAction" method="saveAddOutlayInfo">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="acquireAllInAccountApplicationsByItemID" class="AddOutlayAction" method="acquireAllInAccountApplicationsByItemID">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="updateItemNameAndContractId" class="AddOutlayAction" method="updateItemNameAndContractId">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="acquireAllUnAuditedInAccountApplications" class="AddOutlayAction" method="acquireAllUnAuditedInAccountApplications">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="accquireAddOutlayByAddOutlayPK" class="AddOutlayAction" method="accquireAddOutlayByAddOutlayPK">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		<action name="accquireAddOutlayByAddOutlayPK2" class="AddOutlayAction" method="accquireAddOutlayByAddOutlayPK2">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="submitAddOutlayInfo" class="AddOutlayAction" method="submitAddOutlayInfo">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="inAccountAuditProcess" class="AddOutlayAction" method="inAccountAuditProcess">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="accquireNewCreatedIndirectID" class="AddOutlayAction" method="accquireNewCreatedIndirectID">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="itemStatisticsQuery" class="ItemStatisticsQueryAction" method="itemStatisticsQuery">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="acquireAllItemTypesPKAndName" class="UniversityLevelStatisticsQueryAction" method="acquireAllItemTypesPKAndName">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="universityLevelStatisticsQuery" class="UniversityLevelStatisticsQueryAction" method="universityLevelStatisticsQuery">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="teacherOutlayStatisticsQuery" class="TeacherOutlayStatisticsQueryAction" method="teacherOutlayStatisticsQuery">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+	</package>
+	
+</struts>    

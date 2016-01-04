@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="xjk" extends="json-default" namespace="/">
+		
+		<action name="acquireProvincialFundInfo" class="ProvincialFundAction" method="acquireProvincialFundInfo">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+			
+		<action name="saveProvincialFundInfo" class="ProvincialFundAction" method="saveProvincialFundInfo">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="submitProvincialFundInfo" class="ProvincialFundAction" method="submitProvincialFundInfo">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="acquireProjectInfoAuditList" class="ProjectInfoAuditAction" method="acquireProjectInfoAuditList">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="projectInfoAuditApprove" class="ProjectInfoAuditAction" method="projectInfoAuditApprove">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="projectInfoAuditReject" class="ProjectInfoAuditAction" method="projectInfoAuditReject">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="acquireProvincialOutlayInfo" class="ProvincialOutlayAction" method="acquireProvincialOutlayInfo">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="submitProvincialOutlayInfo" class="ProvincialOutlayAction" method="submitProvincialOutlayInfo">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="acquireProvincialOutlayView" class="ProvincialOutlayAction" method="acquireProvincialOutlayView">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="acquireProvincialOutlayHistory" class="ProvincialOutlayAction" method="acquireProvincialOutlayHistory">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="acquireProvincialStatistic" class="ProvincialOutlayAction" method="acquireProvincialStatistic">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="acquireProjectQueryInfoAdmin" class="ProjectQueryAdminAction" method="acquireProjectQueryInfoAdmin">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="singleProjectInfoAdminQuery" class="ProjectQueryAdminAction" method="singleProjectInfoAdminQuery">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="itemQuery" class="ProjectQueryAdminAction" method="itemQuery">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="acquireOneItemInfo" class="ProjectQueryAdminAction" method="acquireOneItemInfo">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="modifyItem" class="ProjectQueryAdminAction" method="modifyItem">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="deleteItem" class="ProjectQueryAdminAction" method="deleteItem">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="projectStatisticAdminQuery" class="ProjectQueryAdminAction" method="projectStatisticAdminQuery">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="inAccountAdminQuery" class="InAccountQueryAdminAction" method="inAccountAdminQuery">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		<action name="addoutlayQuery" class="InAccountQueryAdminAction" method="addoutlayQuery">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		<action name="acquireOneAddoutlayInfo" class="InAccountQueryAdminAction" method="acquireOneAddoutlayInfo">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		<action name="modifyAddoutlay" class="InAccountQueryAdminAction" method="modifyAddoutlay">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		<action name="deleteAddoutlay" class="InAccountQueryAdminAction" method="deleteAddoutlay">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		<action name="accquireOldAddoutlaysByAddoutlayPK" class="AddOutlayAction" method="accquireOldAddoutlaysByAddoutlayPK">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+	</package>
+</struts>    

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="ZM" extends="json-default"
+		namespace="/">
+		
+		<action name="saveTeacherPassord" class="TeacherPasswordChangeAction" method="saveTeacherPassord">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="saveAdminPassord" class="TeacherPasswordChangeAction" method="saveAdminPassord">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="acquireAllProjectType" class="ProjectTypeMaintainceAction" method="acquireAllProjectType">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="acquireAllTeacherInfo" class="TeacherMaintainceAction" method="acquireAllTeacherInfo">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>	
+		
+		<action name="acquireAllAdminInfo" class="TeacherMaintainceAction" method="acquireAllAdminInfo">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="acquireNationalFundBudgetInfo" class="NationalFundBudgetAction" method="acquireNationalFundBudgetInfo">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>	
+		
+		<action name="saveNationalFundBudgetInfo" class="NationalFundBudgetAction" method="saveNationalFundBudgetInfo">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="submitNationalFundBudgetInfo" class="NationalFundBudgetAction" method="submitNationalFundBudgetInfo">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		
+		<action name="acquireNationalFundBudgetAdjust" class="NationalFundBudgetAction" method="acquireNationalFundBudgetAdjust">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>	
+		
+		<action name="saveNationalFundBudgetAdjustment" class="NationalFundBudgetAction" method="saveNationalFundBudgetAdjustment">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="submitNationalFundBudgetAdjustment" class="NationalFundBudgetAction" method="submitNationalFundBudgetAdjustment">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		
+		<action name="acquireAllNationalFundAdjustList" class="NationalFundBudgetAction" method="acquireAllNationalFundAdjustList">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="acquireAllUnAuditedBudgetAdjustment" class="NationalBudgetAdjustmentAuditAction" method="acquireAllUnAuditedBudgetAdjustment">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="acquireBudgetAdjustmentDetail" class="NationalBudgetAdjustmentAuditAction" method="acquireBudgetAdjustmentDetail">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>	
+		
+		
+		<action name="budgetAdjustmentAuditPass" class="NationalBudgetAdjustmentAuditAction" method="budgetAdjustmentAuditPass">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="budgetAdjustmentAuditReject" class="NationalBudgetAdjustmentAuditAction" method="budgetAdjustmentAuditReject">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+			
+		
+		<action name="authorizationManage" class="TeacherInfoMaintanceAction" method="authorizationManage">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		<action name="acquireNationalFundOutlay" class="NationalFundOutlayAction" method="acquireNationalFundOutlay">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		
+		<action name="acquireAllNationalFundOutlayList" class="NationalFundOutlayAction" method="acquireAllNationalFundOutlayList">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		
+		<action name="saveNationalFundOutlay" class="NationalFundOutlayAction" method="saveNationalFundOutlay">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="acquireAllDepartmentPKAndName" class="DepartmentLevelStatisticsQueryAction" method="acquireAllDepartmentPKAndName">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="departmentLevelStatisticsQuery" class="DepartmentLevelStatisticsQueryAction" method="departmentLevelStatisticsQuery">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="projectLeaderLevelStatisticsQuery" class="projectLeaderLevelStatisticsQueryAction" method="projectLeaderLevelStatisticsQuery">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="acquire863AdjustInfo" class="A863AdjustAction" method="acquire863AdjustInfo">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="save863Adjust" class="A863AdjustAction" method="save863Adjust">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+			
+		<action name="submit863Adjust" class="A863AdjustAction" method="submit863Adjust">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+				
+		<action name="acquireAll863AdjustList" class="A863AdjustAction" method="acquireAll863AdjustList">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="acquireAllUnAudited863Adjust" class="A863AdjustAction" method="acquireAllUnAudited863Adjust">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="A863AdjustAuditPass" class="A863AdjustAction" method="A863AdjustAuditPass">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+		<action name="A863AdjustAuditReject" class="A863AdjustAction" method="A863AdjustAuditReject">
+			<result type="json" name="success">
+				<param name="includeProperties">
+					jsonResult,actionStatus
+				</param>
+			</result>
+		</action>
+		
+	</package>
+</struts>    

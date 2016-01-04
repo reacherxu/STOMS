@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<bean id="AdminPasswordChangeAction" class="com.stoms.action.AdminPasswordChangeAction"
+		scope="prototype">
+		<property name="teacherLoginDAO">
+			<ref bean="TeacherLoginDAO" />
+		</property>
+	</bean>
+
+	<bean id="TeacherAuthorityService" class="com.stoms.service.TeacherAuthorityService"
+		scope="prototype">
+		<property name="teacherAuthorityDAO">
+			<ref bean="TeacherAuthorityDAO" />
+		</property>
+	</bean>
+
+	<bean id="TestActionlyy" class="com.stoms.action.TestActionlyy"
+		scope="prototype">
+		<property name="itemService">
+			<ref bean="ItemService" />
+		</property>
+		<property name="teacherService">
+			<ref bean="TeacherService" />
+		</property>
+		<property name="teacherStatisticsService">
+			<ref bean="TeacherStatisticsService" />
+		</property>
+		<property name="columnSumOutlayService">
+			<ref bean="ColumnSumOutlayService" />
+		</property>
+		<property name="statisticsCampusOutlayService">
+			<ref bean="StatisticsCampusOutlayService" />
+		</property>
+		<property name="statisticsTeacherOutlayService">
+			<ref bean="StatisticsTeacherOutlayService" />
+		</property>
+		<property name="teacherStatisticsOutlayService">
+			<ref bean="TeacherStatisticsOutlayService" />
+		</property>
+		<property name="addOutlayService">
+			<ref bean="AddOutlayService" />
+		</property>
+		<property name="a863DetailBudgetService">
+			<ref bean="A863DetailBudgetService" />
+		</property>
+			<property name="calculateNewPercentService">
+			<ref bean="CalculateNewPercentService" />
+		</property>
+	</bean>
+	
+		<bean id="CalculateNewPercentService" class="com.stoms.service.CalculateNewPercentService"
+		scope="prototype">
+		<property name="actualFundBudgetDAO">
+			<ref bean="ActualFundBudgetDAO" />
+		</property>
+		<property name="a863njubudgetDAO">
+			<ref bean="A863njubudgetDAO" />
+		</property>
+		<property name="nationalFundBudgetDAO">
+			<ref bean="NationalFundBudgetDAO" />
+		</property>
+		<property name="socialScienceNjubudgetDAO">
+			<ref bean="SocialScienceNjubudgetDAO" />
+		</property>
+		<property name="itemDAO">
+			<ref bean="ItemDAO" />
+		</property>
+		<property name="pforNewDAO">
+			<ref bean="PforNewDAO" />
+		</property>
+	</bean>
+	
+		<bean id="A863DetailBudgetService" class="com.stoms.service.A863DetailBudgetService"
+		scope="prototype">
+		<property name="a863detailBudgetDAO">
+			<ref bean="A863detailBudgetDAO" />
+		</property>
+		<property name="a863njubudgetDAO">
+			<ref bean="A863njubudgetDAO" />
+		</property>
+		<property name="a863approvalBudgetDAO">
+			<ref bean="A863approvalBudgetDAO" />
+		</property>
+	</bean>
+
+	<bean id="TeacherStatisticsOutlayService" class="com.stoms.service.TeacherStatisticsOutlayService"
+		scope="prototype">
+		<property name="itemDAO">
+			<ref bean="ItemDAO" />
+		</property>
+		<property name="addOutlayDAO">
+			<ref bean="AddOutlayDAO" />
+		</property>
+		<property name="projectTypeDAO">
+			<ref bean="ProjectTypeDAO" />
+		</property>
+		<property name="nationalFundOutlayDAO">
+			<ref bean="NationalFundOutlayDAO" />
+		</property>
+		<property name="a863outlayDAO">
+			<ref bean="A863outlayDAO" />
+		</property>
+		<property name="sumFundOutlayDAO">
+			<ref bean="SumFundOutlayDAO" />
+		</property>
+		<property name="socialScienceOutlayDAO">
+			<ref bean="SocialScienceOutlayDAO" />
+		</property>
+	</bean>
+
+	<bean id="StatisticsCampusOutlayService" class="com.stoms.service.StatisticsCampusOutlayService"
+		scope="prototype">
+		<property name="itemDAO">
+			<ref bean="ItemDAO" />
+		</property>
+		<property name="projectTypeDAO">
+			<ref bean="ProjectTypeDAO" />
+		</property>
+		<property name="nationalFundOutlayDAO">
+			<ref bean="NationalFundOutlayDAO" />
+		</property>
+		<property name="a863outlayDAO">
+			<ref bean="A863outlayDAO" />
+		</property>
+		<property name="sumFundOutlayDAO">
+			<ref bean="SumFundOutlayDAO" />
+		</property>
+		<property name="addOutlayDAO">
+			<ref bean="AddOutlayDAO" />
+		</property>
+	</bean>
+	
+		<bean id="StatisticsTeacherOutlayService" class="com.stoms.service.StatisticsTeacherOutlayService"
+		scope="prototype">
+		<property name="itemDAO">
+			<ref bean="ItemDAO" />
+		</property>
+		<property name="projectTypeDAO">
+			<ref bean="ProjectTypeDAO" />
+		</property>
+		<property name="nationalFundOutlayDAO">
+			<ref bean="NationalFundOutlayDAO" />
+		</property>
+		<property name="a863outlayDAO">
+			<ref bean="A863outlayDAO" />
+		</property>
+		<property name="sumFundOutlayDAO">
+			<ref bean="SumFundOutlayDAO" />
+		</property>
+		<property name="addOutlayDAO">
+			<ref bean="AddOutlayDAO" />
+		</property>
+	</bean>
+
+	<bean id="ColumnSumOutlayService" class="com.stoms.service.ColumnSumOutlayService"
+		scope="prototype">
+
+		<property name="itemDAO">
+			<ref bean="ItemDAO" />
+		</property>
+		<property name="projectTypeDAO">
+			<ref bean="ProjectTypeDAO" />
+		</property>
+		<property name="nationalFundOutlayDAO">
+			<ref bean="NationalFundOutlayDAO" />
+		</property>
+		<property name="a863outlayDAO">
+			<ref bean="A863outlayDAO" />
+		</property>
+		<property name="sumFundOutlayDAO">
+			<ref bean="SumFundOutlayDAO" />
+		</property>
+		<property name="socialScienceOutlayDAO">
+			<ref bean="SocialScienceOutlayDAO" />
+		</property>
+
+	</bean>
+
+
+	<bean id="TeacherStatisticsService" class="com.stoms.service.TeacherStatisticsService"
+		scope="prototype">
+		<property name="itemDAO">
+			<ref bean="ItemDAO" />
+		</property>
+		<property name="addOutlayDAO">
+			<ref bean="AddOutlayDAO" />
+		</property>
+		<property name="projectTypeDAO">
+			<ref bean="ProjectTypeDAO" />
+		</property>
+		<property name="nationalFundOutlayDAO">
+			<ref bean="NationalFundOutlayDAO" />
+		</property>
+		<property name="a863outlayDAO">
+			<ref bean="A863outlayDAO" />
+		</property>
+		<property name="sumFundOutlayDAO">
+			<ref bean="SumFundOutlayDAO" />
+		</property>
+		<property name="socialScienceOutlayDAO">
+			<ref bean="SocialScienceOutlayDAO" />
+		</property>
+	</bean>
+	
+	<bean id="StatisticsDepartmentOutlayService" class="com.stoms.service.StatisticsDepartmentOutlayService"
+		scope="prototype">
+		<property name="itemDAO">
+			<ref bean="ItemDAO" />
+		</property>
+		<property name="projectTypeDAO">
+			<ref bean="ProjectTypeDAO" />
+		</property>
+		<property name="nationalFundOutlayDAO">
+			<ref bean="NationalFundOutlayDAO" />
+		</property>
+		<property name="a863outlayDAO">
+			<ref bean="A863outlayDAO" />
+		</property>
+		<property name="sumFundOutlayDAO">
+			<ref bean="SumFundOutlayDAO" />
+		</property>
+		<property name="addOutlayDAO">
+			<ref bean="AddOutlayDAO" />
+		</property>
+		<property name="departmentDAO">
+			<ref bean="DepartmentDAO" />
+		</property>
+	</bean>
+
+</beans>

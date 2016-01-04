@@ -1,0 +1,271 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	background-color: #FFFFFF;
+	text-align: center;
+	
+}
+
+table td {
+	font-size: 14px;
+}
+
+a {
+	text-decoration:none;
+	color:black;
+	padding:0.2em 0.6em;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+h3 {
+	font-size: 25px;
+	font-family: 黑体;
+	height: 50px;
+}
+
+#leftSideBarLabel {
+	font-size: 18px;
+}
+
+#page {
+	width: 960px;
+	background-color: #FFFFFF;
+	margin: 0 auto;
+	
+}
+
+#head {
+	width: 100%;
+	height: 65px;
+	text-align: left;
+	padding-left: 25px;
+}
+
+
+#menu {
+	width: 100%;
+	text-align: left;
+}
+
+#menu table tr {
+	height: 22px;
+}
+
+#menu table td {
+	text-align: center;
+	width: 70px;
+}
+
+#menu a {
+	text-decoration: none;
+	font-size: 14px;
+	color: #FFFFFF;
+	text-align: center;
+}
+
+#menu a:hover {
+	text-decoration: none;
+	font-size: 16px;
+	color: #FFFFFF;
+	cursor:pointer;
+}
+
+#search {
+	width: 100%;
+	background: url(../image/below_menu.jpg) repeat-x;
+	height: 40px;
+	padding-top: 5px;
+}
+
+#position {
+	width: 100%;
+	height: 20px;
+	text-align: left;
+	padding-left: 13px;
+	margin-top: 5px;
+}
+
+#main {
+	position: relative;
+	background-color: #FFFFFF;
+	width: 100%;
+}
+
+#up {
+	float: left;
+	background-color: #FFFFFF;
+	width: 100%;
+}
+
+#down {
+	float: left;
+	margin-top: 20px;
+	background-color: #FFFFFF;
+	width: 100%;
+}
+
+#bottom {
+	float: left;
+	background-color: #FFFFFF;
+	width: 100%;
+	height: 20px;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	border-top: 1px #CCFFFF solid;
+	color: #CC99CC;
+}
+
+#video {
+	background-color: #FFFFFF;
+	float: left;
+	width: 700px;
+	height: 400px;
+	border: 1px #CCFFFF solid;
+}
+
+#login {
+	background-color: #FFFFFF;
+	float: right;
+	width: 220px;
+	height: 200px;
+	color: #000000;
+	border: 1px #CCFFFF solid;
+}
+
+#advertisement {
+	background-color: #FFFFFF;
+	float: right;
+	width: 220px;
+	height: 100px;
+	color: #000000;
+	margin-top: 50px;
+}
+
+#title {
+	background: #EBF0F6;
+	background: url(../image/title.jpg) repeat-x;
+	width: 100%;
+	height: 21px;
+	border-bottom: 1px #CCFFFF solid;
+	text-align: left;
+	color: #000000;
+}
+
+#tuangou {
+	background-color: #FFFFFF;
+	float: left;
+	width: 700px;
+	height: 200px;
+	border: 1px #CCFFFF solid;
+}
+
+#dynamic {
+	background-color: #FFFFFF;
+	float: right;
+	width: 220px;
+	height: 200px;
+	border: 1px #CCFFFF solid;
+}
+
+#video_list {
+	background-color: #FFFFFF;
+	margin-top: 30px;
+	margin-left: 10px;
+	width: 660px;
+	height: 300px;
+}
+
+#video_table {
+	background-color: #FFFFFF;
+	color: #9999CC;
+	font-size: 14px;
+	font-family: "Times New Roman", Times, serif;
+}
+
+#book_list {
+	background-color: #FFFFFF;
+	margin-top: 5px;
+	margin-left: 1px;
+	width: 600px;
+	height: 140px;
+}
+
+#book_table {
+	background-color: #FFFFFF;
+	color: #9999CC;
+	font-size: 14px;
+	font-family: "Times New Roman", Times, serif;
+}
+
+#dynamic_list {
+	background-color: #FFFFFF;
+	margin-top: 30px;
+	width: 200px;
+	height: 140px;
+}
+
+#dynamic_table {
+	background-color: #FFFFFF;
+	color: #9999CC;
+	font-size: 13px;
+	font-family: "Times New Roman", Times, serif;
+}
+
+input.input1 {
+	border: 1px #999999 solid;
+	width: 130px;
+	height: 20px;
+	background: #FFFFFF;
+	margin-bottom: 3px;
+}
+
+input.input2 {
+	border-top: 1px #999999 solid;
+	border-left: 1px #999999 solid;
+	border-bottom: 1px #FFCCCC solid;
+	border-right: 1px #FFCCCC solid;
+	width: 130px;
+	height: 20px;
+	background: #FFFFFF;
+}
+
+button {
+	width: 60px;
+	height: 26px;
+}
+
+.button_search {
+	background-image: url(../image/btn_search_2.jpg);
+	background-repeat: no-repeat;
+	background-position: left top;
+	height: 21px;
+	width: 70px;
+	border: none;
+}
+
+.button_search:hover {
+	background-image: url(../image/btn_search_over.jpg);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.bodyBackGround {
+				background: #83C2EE; /* Old browsers */
+				background: -moz-linear-gradient(top, #2F8DE5 0%, #FFFFFF 90%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,#2F8DE5), color-stop(90%,#FFFFFF)); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top, #2F8DE5 10%,#FFFFFF 90%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top, #2F8DE5 10%,#FFFFFF 90%); /* Opera11.10+ */
+				background: -ms-linear-gradient(top, #2F8DE5 10%,#FFFFFF 90%); /* IE10+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2F8DE5', endColorstr='#FFFFFF',GradientType=0 ); /* IE6-9 */
+				background: linear-gradient(top, #2F8DE5 10%,#FFFFFF 90%); /* W3C */
+				
+				background-repeat:repeat-x;
+			}

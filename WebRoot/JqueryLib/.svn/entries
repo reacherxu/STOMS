@@ -1,0 +1,123 @@
+10
+
+dir
+1200
+svn://114.212.193.45/svn/trunk/stoms/WebRoot/JqueryLib
+svn://114.212.193.45
+
+
+
+2013-10-07T18:25:46.921875Z
+1143
+shi
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+6008a597-53d8-044c-b49f-689ed6035954
+
+SetEditComb.js
+file
+
+
+
+
+2014-07-24T06:57:14.672000Z
+1e2bb09b8f686a2efe2f4fee4d0b5c72
+2013-07-14T07:02:51.875000Z
+1121
+shi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15163
+
+css
+dir
+
+dataTable
+dir
+
+ddsmoothmenu
+dir
+
+development-bundle
+dir
+
+dialog
+dir
+
+editable-select
+dir
+
+idealForms
+dir
+
+index.html
+file
+
+
+
+
+2014-07-24T06:57:14.512000Z
+5ca1625b4a9d40e4aa787c452663cc6a
+2011-11-13T14:54:34.515625Z
+8
+cheng
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+31575
+
+js
+dir
+
+validationEngine
+dir
+

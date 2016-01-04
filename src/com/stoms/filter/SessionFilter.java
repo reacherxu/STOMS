@@ -1,0 +1,93 @@
+package com.stoms.filter;
+
+import java.io.IOException;
+
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+
+import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class SessionFilter implements Filter {
+
+	@Override
+	public void destroy() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void doFilter(ServletRequest request, ServletResponse response,
+			FilterChain chain) throws IOException, ServletException {
+		// TODO Auto-generated method stub
+		  HttpServletRequest req = (HttpServletRequest)request;
+		  HttpServletResponse res =(HttpServletResponse)response;
+		  HttpSession session = req.getSession();
+		  //思路：
+		  //首先，isValidate.action（登录的action）放行
+		  //然后，session“curr_superAdminID”，或者 管理员是 session“curr_adminID”，存在的话放行，
+		  //不存在的话设置sessionstatus为timeout
+		  
+		  String uri = req.getRequestURI();
+//		  System.out.println("uri:"+uri);
+		  
+		  if("/STOMS/isValidate.action".equals(uri)
+				  || "/STOMS/superAdminLogout.action".equals(uri)
+				  || "/STOMS/adminLogout.action".equals(uri)){
+//			  /****
+//			   * 对访问登录的用户ip进行验证，如果不是下列三个ip，跳转到error.jsp
+//			   * 
+//			   */
+//			  String ip = req.getHeader("x-forwarded-for");
+//			  if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+//				  ip = req.getHeader("Proxy-Client-IP");
+//			  }
+//			  if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+//				  ip = req.getHeader("WL-Proxy-Client-IP");
+//			  }
+//			  if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+//				  ip = req.getRemoteAddr();
+//			  }
+//			  System.out.println("ip:"+ip);
+//			  if(true){
+				  chain.doFilter(request, response);
+//			  }else{
+//				  if (req.getHeader("x-requested-with") != null  
+//		                    && req.getHeader("x-requested-with").equalsIgnoreCase("XMLHttpRequest")) {  
+//		                res.setHeader("illegal_log_in", "true");//在响应头设置session状态 （js/common/util.js进行相应处理）  
+//		                return;  
+//		          }  
+//			  }
+			  
+		  }else{
+			  String adminId = (String)session.getAttribute("curr_adminID");
+			  String superAdminId = (String)session.getAttribute("curr_superAdminID");
+			  String teacherId = (String)session.getAttribute("curr_teacherID");
+			  if((adminId!=null && !adminId.equals("")) || (superAdminId!=null && !superAdminId.equals("")) || (teacherId!=null && !teacherId.equals(""))){
+				  chain.doFilter(request, response);//session存在，放行
+			  }else{//session不存在，如果是ajax请求，设置sessionstatus为timeout
+				  if (req.getHeader("x-requested-with") != null  
+		                    && req.getHeader("x-requested-with").equalsIgnoreCase("XMLHttpRequest")) {  
+		                res.setHeader("sessionstatus", "timeout");//在响应头设置session状态  
+		                return;  
+		          }
+				  else{
+					  chain.doFilter(request, response);
+				  }
+			  }
+		  }
+	}
+
+	@Override
+	public void init(FilterConfig filterConfig) throws ServletException {
+		// TODO Auto-generated method stub
+
+	}
+
+}

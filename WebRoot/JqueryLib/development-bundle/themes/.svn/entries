@@ -1,0 +1,34 @@
+10
+
+dir
+1200
+svn://114.212.193.45/svn/trunk/stoms/WebRoot/JqueryLib/development-bundle/themes
+svn://114.212.193.45
+
+
+
+2012-04-22T14:18:06.765625Z
+786
+cheng
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+6008a597-53d8-044c-b49f-689ed6035954
+
+base
+dir
+
+ui-lightness
+dir
+

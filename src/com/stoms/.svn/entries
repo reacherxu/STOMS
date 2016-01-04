@@ -1,0 +1,46 @@
+10
+
+dir
+1200
+svn://114.212.193.45/svn/trunk/stoms/src/com/stoms
+svn://114.212.193.45
+
+
+
+2014-07-19T14:01:45.937500Z
+1193
+shi
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+6008a597-53d8-044c-b49f-689ed6035954
+
+action
+dir
+
+dao
+dir
+
+filter
+dir
+
+model
+dir
+
+service
+dir
+
+utils
+dir
+

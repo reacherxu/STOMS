@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd 
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	">
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver">
+		</property>
+		<property name="url" value="jdbc:sqlserver://localhost:1433">
+		</property>
+		<property name="username" value="sa"></property>
+		<property name="password" value="reacher"></property>
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.SQLServerDialect
+				</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+
+
+				<value>com/stoms/model/TeacherTitle.hbm.xml</value>
+				<value>com/stoms/model/Department.hbm.xml</value>
+				<value>com/stoms/model/TeacherItem.hbm.xml</value>
+				<value>
+					com/stoms/model/NationalFundBudget.hbm.xml
+				</value>
+				<value>
+					com/stoms/model/NationalFundBudgetSum.hbm.xml
+				</value>
+				<value>com/stoms/model/ActualFundBudget.hbm.xml</value>
+				<value>com/stoms/model/AgencyFundOutlay.hbm.xml</value>
+				<value>com/stoms/model/SelfFundOutlay.hbm.xml</value>
+				<value>com/stoms/model/SumFundOutlay.hbm.xml</value>
+				<value>
+					com/stoms/model/NationalFundRemark.hbm.xml
+				</value>
+				<value>com/stoms/model/ActualFundRemark.hbm.xml</value>
+				<value>com/stoms/model/ProjectManager.hbm.xml</value>
+				<value>com/stoms/model/TeacherAuthority.hbm.xml</value>
+				<value>com/stoms/model/Pdepartment.hbm.xml</value>
+				<value>
+					com/stoms/model/NationalFundOutlay.hbm.xml
+				</value>
+				<value>
+					com/stoms/model/NationalFundBudgetRemark.hbm.xml
+				</value>
+				<value>
+					com/stoms/model/A863approvalBudget.hbm.xml
+				</value>
+				<value>
+					com/stoms/model/A863cooperationBudget.hbm.xml
+				</value>
+				<value>com/stoms/model/A863njubudget.hbm.xml</value>
+				<value>com/stoms/model/A863outlay.hbm.xml</value>
+				<value>com/stoms/model/A863sum.hbm.xml</value>
+				<value>
+					com/stoms/model/SocialScienceApprovalBudget.hbm.xml
+				</value>
+				<value>
+					com/stoms/model/SocialScienceBudgetSum.hbm.xml
+				</value>
+				<value>
+					com/stoms/model/SocialScienceCooperationBudget.hbm.xml
+				</value>
+				<value>
+					com/stoms/model/SocialScienceNjubudget.hbm.xml
+				</value>
+				<value>
+					com/stoms/model/SocialScienceOutlay.hbm.xml
+				</value>
+				<value>com/stoms/model/A863remark.hbm.xml</value>
+				<value>com/stoms/model/A863detailBudget.hbm.xml</value>
+				<value>com/stoms/model/TeacherLogin.hbm.xml</value>
+				<value>
+					com/stoms/model/SocialScienceRemark.hbm.xml
+				</value>
+				<value>com/stoms/model/A863item.hbm.xml</value>
+				<value>com/stoms/model/ActualFundItem.hbm.xml</value>
+				<value>com/stoms/model/NationalFundItem.hbm.xml</value>
+				<value>com/stoms/model/SocialScienceItem.hbm.xml</value>
+				<value>com/stoms/model/PforNew.hbm.xml</value>
+				<value>com/stoms/model/ProjectType.hbm.xml</value>
+				<value>com/stoms/model/AddOutlay.hbm.xml</value>
+				<value>com/stoms/model/oldAddOutlay.hbm.xml</value>
+				<value>com/stoms/model/Item.hbm.xml</value>
+				<value>com/stoms/model/A863adjust.hbm.xml</value>
+				<value>
+					com/stoms/model/NationalFundAdjust.hbm.xml
+				</value>
+				<value>com/stoms/model/Teacher.hbm.xml</value>
+				<value>com/stoms/model/Budget.hbm.xml</value>
+				<value>com/stoms/model/BudgetMapping.hbm.xml</value>
+				<value>com/stoms/model/Expenditure.hbm.xml</value></list>
+		</property>
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+
+	<import resource="./applicationContext-lyy.xml" />
+	<import resource="./applicationContext-zm.xml" />
+	<import resource="./applicationContext-cj.xml" />
+	<import resource="./applicationContext-clj.xml" />
+	<import resource="./applicationContext-xjk.xml" />
+	<import resource="./applicationContext-upload.xml" />
+	<import resource="./applicationContext-bg.xml" />
+	<import resource="./applicationContext-wjf.xml" />
+
+
+	<bean id="TeacherTitleDAO" class="com.stoms.dao.TeacherTitleDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="DepartmentDAO" class="com.stoms.dao.DepartmentDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TeacherItemDAO" class="com.stoms.dao.TeacherItemDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="NationalFundBudgetDAO" class="com.stoms.dao.NationalFundBudgetDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="NationalFundBudgetSumDAO" class="com.stoms.dao.NationalFundBudgetSumDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="ActualFundBudgetDAO" class="com.stoms.dao.ActualFundBudgetDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="AgencyFundOutlayDAO" class="com.stoms.dao.AgencyFundOutlayDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="SelfFundOutlayDAO" class="com.stoms.dao.SelfFundOutlayDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="SumFundOutlayDAO" class="com.stoms.dao.SumFundOutlayDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="NationalFundRemarkDAO" class="com.stoms.dao.NationalFundRemarkDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ActualFundRemarkDAO" class="com.stoms.dao.ActualFundRemarkDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ProjectManagerDAO" class="com.stoms.dao.ProjectManagerDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TeacherAuthorityDAO" class="com.stoms.dao.TeacherAuthorityDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="PdepartmentDAO" class="com.stoms.dao.PdepartmentDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="NationalFundOutlayDAO" class="com.stoms.dao.NationalFundOutlayDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="NationalFundBudgetRemarkDAO" class="com.stoms.dao.NationalFundBudgetRemarkDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="A863approvalBudgetDAO" class="com.stoms.dao.A863approvalBudgetDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="A863cooperationBudgetDAO" class="com.stoms.dao.A863cooperationBudgetDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="A863njubudgetDAO" class="com.stoms.dao.A863njubudgetDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="A863outlayDAO" class="com.stoms.dao.A863outlayDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="A863sumDAO" class="com.stoms.dao.A863sumDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="SocialScienceApprovalBudgetDAO" class="com.stoms.dao.SocialScienceApprovalBudgetDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="SocialScienceBudgetSumDAO" class="com.stoms.dao.SocialScienceBudgetSumDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="SocialScienceCooperationBudgetDAO" class="com.stoms.dao.SocialScienceCooperationBudgetDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="SocialScienceNjubudgetDAO" class="com.stoms.dao.SocialScienceNjubudgetDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="SocialScienceOutlayDAO" class="com.stoms.dao.SocialScienceOutlayDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="A863remarkDAO" class="com.stoms.dao.A863remarkDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="A863detailBudgetDAO" class="com.stoms.dao.A863detailBudgetDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TeacherLoginDAO" class="com.stoms.dao.TeacherLoginDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="SocialScienceRemarkDAO" class="com.stoms.dao.SocialScienceRemarkDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="A863itemDAO" class="com.stoms.dao.A863itemDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ActualFundItemDAO" class="com.stoms.dao.ActualFundItemDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="NationalFundItemDAO" class="com.stoms.dao.NationalFundItemDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="SocialScienceItemDAO" class="com.stoms.dao.SocialScienceItemDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="PforNewDAO" class="com.stoms.dao.PforNewDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ProjectTypeDAO" class="com.stoms.dao.ProjectTypeDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="AddOutlayDAO" class="com.stoms.dao.AddOutlayDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="OldAddOutlayDAO" class="com.stoms.dao.OldAddOutlayDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ItemDAO" class="com.stoms.dao.ItemDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="A863adjustDAO" class="com.stoms.dao.A863adjustDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="NationalFundAdjustDAO" class="com.stoms.dao.NationalFundAdjustDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TeacherDAO" class="com.stoms.dao.TeacherDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="BudgetDAO" class="com.stoms.dao.BudgetDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="BudgetMappingDAO"
+		class="com.stoms.dao.BudgetMappingDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ExpenditureDAO" class="com.stoms.dao.ExpenditureDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean></beans>

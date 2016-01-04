@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="TeacherPasswordChangeAction" class="com.stoms.action.TeacherPasswordChangeAction"
+		scope="prototype">
+		<property name="teacherLoginDAO">
+			<ref bean="TeacherLoginDAO" />
+		</property>
+	</bean>
+	
+	<bean id="TeacherMaintainceAction" class="com.stoms.action.TeacherMaintainceAction"
+		scope="prototype">
+		<property name="teacherService">
+			<ref bean="TeacherService" />
+		</property>
+		
+		<property name="departmentService">
+			<ref bean="DepartmentService" />
+		</property>
+		
+		<property name="teacherTitleService">
+			<ref bean="TeacherTitleService" />
+		</property>
+		
+		<property name="teacherLoginService">
+			<ref bean="TeacherLoginService" />
+		</property>
+	</bean>
+	
+	<bean id="TeacherLoginService" class="com.stoms.service.TeacherLoginService"
+		scope="prototype">
+		<property name="teacherLoginDAO">
+			<ref bean="TeacherLoginDAO" />
+		</property>
+	</bean> 
+	
+	<bean id="TeacherService" class="com.stoms.service.TeacherService"
+		scope="prototype">
+		<property name="teacherDAO">
+			<ref bean="TeacherDAO" />
+		</property>
+
+		<property name="teacherLoginDAO">
+			<ref bean="TeacherLoginDAO" />
+		</property>
+
+		<property name="departmentDAO">
+			<ref bean="DepartmentDAO" />
+		</property>
+		
+		<property name="teacherTitleDAO">
+			<ref bean="TeacherTitleDAO" />
+		</property>
+		
+	</bean> 
+	
+	
+	<bean id="NationalFundBudgetAction" class="com.stoms.action.NationalFundBudgetAction"
+		scope="prototype">
+		<property name="nationalFundBudgetService">
+			<ref bean="NationalFundBudgetService" />
+		</property>
+		<property name="itemService">
+			<ref bean="ItemService" />
+		</property>	
+	</bean>
+	
+	<bean id="NationalFundBudgetService" class="com.stoms.service.NationalFundBudgetService"
+		scope="prototype">
+		<property name="nationalFundItemDAO">
+			<ref bean="NationalFundItemDAO" />
+		</property>
+		<property name="nationalFundBudgetDAO">
+			<ref bean="NationalFundBudgetDAO" />
+		</property>		
+		<property name="itemDAO">
+			<ref bean="ItemDAO" />
+		</property>
+		<property name="nationalFundAdjustDAO">
+			<ref bean="NationalFundAdjustDAO" />
+		</property>	
+		<property name="nationalFundBudgetSumDAO">
+			<ref bean="NationalFundBudgetSumDAO" />
+		</property>		
+		<property name="nationalFundBudgetRemarkDAO">
+			<ref bean="NationalFundBudgetRemarkDAO" />
+		</property>		
+	</bean>
+	
+	<bean id="NationalBudgetAdjustmentAuditAction" class="com.stoms.action.NationalBudgetAdjustmentAuditAction"
+		scope="prototype">
+		<property name="budgetAdjustService">
+			<ref bean="BudgetAdjustService" />
+		</property>
+	</bean>
+	
+	<bean id="BudgetAdjustService" class="com.stoms.service.BudgetAdjustService"
+		scope="prototype">
+		<property name="nationalFundItemDAO">
+			<ref bean="NationalFundItemDAO" />
+		</property>
+		<property name="nationalFundBudgetDAO">
+			<ref bean="NationalFundBudgetDAO" />
+		</property>		
+		<property name="itemDAO">
+			<ref bean="ItemDAO" />
+		</property>
+		<property name="nationalFundAdjustDAO">
+			<ref bean="NationalFundAdjustDAO" />
+		</property>	
+		<property name="nationalFundBudgetSumDAO">
+			<ref bean="NationalFundBudgetSumDAO" />
+		</property>		
+	</bean>
+	
+	<bean id="NationalFundOutlayAction" class="com.stoms.action.NationalFundOutlayAction"
+		scope="prototype">
+		<property name="nationalFundOutlayService">
+			<ref bean="NationalFundOutlayService" />
+		</property>
+		<property name="itemService">
+			<ref bean="ItemService" />
+		</property>		
+	</bean>
+	
+	<bean id="NationalFundOutlayService" class="com.stoms.service.NationalFundOutlayService"
+		scope="prototype">
+		<property name="nationalFundItemDAO">
+			<ref bean="NationalFundItemDAO" />
+		</property>
+		<property name="nationalFundBudgetDAO">
+			<ref bean="NationalFundBudgetDAO" />
+		</property>		
+		<property name="itemDAO">
+			<ref bean="ItemDAO" />
+		</property>
+		<property name="nationalFundOutlayDAO">
+			<ref bean="NationalFundOutlayDAO" />
+		</property>		
+		<property name="nationalFundRemarkDAO">
+			<ref bean="NationalFundRemarkDAO" />
+		</property>		
+		<property name="columnSumOutlayService">
+			<ref bean="ColumnSumOutlayService" />
+		</property>		
+		<property name="nationalFundBudgetRemarkDAO">
+			<ref bean="NationalFundBudgetRemarkDAO" />
+		</property>		
+	</bean>
+	
+	<bean id="DepartmentLevelStatisticsQueryAction" class="com.stoms.action.DepartmentLevelStatisticsQueryAction"
+		scope="prototype">
+		<property name="departmentService">
+			<ref bean="DepartmentService" />
+		</property>
+		<property name="statisticsDepartmentOutlayService">
+			<ref bean="StatisticsDepartmentOutlayService" />
+		</property>
+	</bean>
+	
+	<bean id="projectLeaderLevelStatisticsQueryAction" class="com.stoms.action.projectLeaderLevelStatisticsQueryAction"
+		scope="prototype">
+		<property name="statisticsTeacherOutlayService">
+			<ref bean="StatisticsTeacherOutlayService" />
+		</property>
+	</bean>
+	
+	<bean id="A863AdjustAction" class="com.stoms.action.A863AdjustAction"
+		scope="prototype">
+		<property name="a863adjustService">
+			<ref bean="A863adjustService" />
+		</property>
+		<property name="itemService">
+			<ref bean="ItemService" />
+		</property>	
+	</bean>
+	
+	<bean id="A863adjustService" class="com.stoms.service.A863adjustService"
+		scope="prototype">
+		<property name="a863njubudgetDAO">
+			<ref bean="A863njubudgetDAO" />
+		</property>
+		<property name="a863adjustDAO">
+			<ref bean="A863adjustDAO" />
+		</property>		
+		<property name="itemDAO">
+			<ref bean="ItemDAO" />
+		</property>					
+	</bean>
+	
+</beans>

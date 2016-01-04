@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="STOMS"
+  id="myeclipse.1320138140968"
+  context-root="/STOMS"
+  j2ee-spec="6.0"
+  archive="STOMS.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

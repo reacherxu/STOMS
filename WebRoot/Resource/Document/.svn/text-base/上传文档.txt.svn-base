@@ -1,0 +1,68 @@
+关于预算表内附件上传部分的功能说明
+
+jsp页面的修改，例子：  /Page/Teacher/projectManagement/provincialFundBudget.jsp
+
+
+1 js添加:
+	<script type="text/javascript" src="JS/common/fileUpload.js"></script>
+	<script type="text/javascript" src="JS/common/swfupload.js"></script>
+	
+	<script type="text/javascript">
+		var swfu;
+		window.onload = function () {
+			swfu = new SWFUpload({
+				// Backend Settings
+				upload_url: "<%=path%>/fileUpload.action",
+				post_params: { "itemPK" : "<%= request.getParameter("itemPk")%>"  },
+
+				// File Upload Settings
+				file_size_limit : "4 MB",	// 4MB
+				file_types : "*.*",
+				file_types_description : "All Files",
+				file_upload_limit : "0",
+				
+				// Event Handler Settings - these functions as defined in Handlers.js
+				//  The handlers are not part of SWFUpload but are part of my website and control how
+				//  my website reacts to the SWFUpload events.
+				file_queue_error_handler : fileQueueError,
+				file_dialog_complete_handler : fileDialogComplete,
+				upload_progress_handler : uploadProgress,
+				upload_error_handler : uploadError,
+				upload_success_handler : uploadSuccess,
+				upload_complete_handler : uploadComplete,
+
+				// Button Settings
+				button_image_url : "/STOMS/Resource/Image/SmallSpyGlassWithTransperancy_17x18.png",
+				button_placeholder_id : "spanButtonPlaceHolder",
+				button_width: 100,
+				button_height: 18,
+				button_text : '<span class="button">选择上传文件</span>',
+				button_text_style : '.button { font-family: Helvetica, Arial, sans-serif; font-size: 12pt; }',
+				button_text_top_padding: 0,
+				button_text_left_padding: 18,
+				button_window_mode: SWFUpload.WINDOW_MODE.TRANSPARENT,
+				button_cursor: SWFUpload.CURSOR.HAND,
+				
+				// Flash Settings
+				flash_url : "swf/swfupload.swf",
+
+				custom_settings : {
+					upload_target : "divFileProgressContainer"
+				},
+				
+				// Debug Settings
+				debug: false
+			});
+		};
+	</script>
+	
+	
+2 增加jsp内的上传控件：
+	具体见  <!-- 上传部分   start -->		<!-- 上传部分   end -->	之间的代码
+	
+
+3 别的文件的改动：
+
+fileUpload.js 中的函数 refreshPicList() 要在页面$(document).ready(function()中调用，用于第一次载入附件列表
+
+

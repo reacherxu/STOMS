@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<bean id="TeacherLoginAction" class="com.stoms.action.TeacherLoginAction"
+		scope="prototype">
+		<property name="teacherLoginDAO">
+			<ref bean="TeacherLoginDAO" />
+		</property>
+		<property name="teacherDAO">
+			<ref bean="TeacherDAO" />
+		</property>
+	</bean>
+	
+	<bean id="TeacherInfoMaintanceAction" class="com.stoms.action.TeacherInfoMaintanceAction"
+		scope="prototype">
+		<property name="teacherLoginDAO">
+			<ref bean="TeacherLoginDAO" />
+		</property>
+		<property name="teacherDAO">
+			<ref bean="TeacherDAO" />
+		</property>
+		<property name="teacherAuthorityDAO">
+			<ref bean="TeacherAuthorityDAO" />
+		</property>
+	</bean>
+	
+	<bean id="AdminInfoMaintainceAction" class="com.stoms.action.AdminInfoMaintainceAction"
+		scope="prototype">
+		<property name="teacherLoginDAO">
+			<ref bean="TeacherLoginDAO" />
+		</property>
+		<property name="teacherDAO">
+			<ref bean="TeacherDAO" />
+		</property>
+	</bean>
+	
+	<bean id="TeacherTitleService" class="com.stoms.service.TeacherTitleService"
+		scope="prototype">
+		<property name="teacherTitleDAO">
+			<ref bean="TeacherTitleDAO" />
+		</property>
+	</bean>
+	
+	<bean id="TeacherTitleMaintainceAction" class="com.stoms.action.TeacherTitleMaintainceAction"
+		scope="prototype">
+		<property name="teacherTitleService">
+			<ref bean="TeacherTitleService" />
+		</property>
+	</bean>
+	
+	<bean id="ItemService" class="com.stoms.service.ItemService"
+		scope="prototype">
+		<property name="itemDAO">
+			<ref bean="ItemDAO" />
+		</property>
+		<property name="departmentDAO">
+			<ref bean="DepartmentDAO" />
+		</property>
+		<property name="projectTypeDAO">
+			<ref bean="ProjectTypeDAO" />
+		</property>
+		<property name="teacherDAO">
+			<ref bean="TeacherDAO" />
+		</property>
+		<property name="actualFundItemDAO">
+			<ref bean="ActualFundItemDAO" />
+		</property>
+		<property name="nationalFundItemDAO">
+			<ref bean="NationalFundItemDAO" />
+		</property>
+		<property name="a863itemDAO">
+			<ref bean="A863itemDAO" />
+		</property>
+		<property name="socialScienceItemDAO">
+			<ref bean="SocialScienceItemDAO" />
+		</property>
+		
+	</bean>
+	
+	<bean id="ProjectRegistrationAction" class="com.stoms.action.ProjectRegistrationAction"
+		scope="prototype">
+		<property name="itemService">
+			<ref bean="ItemService" />
+		</property>
+		<property name="departmentService">
+			<ref bean="DepartmentService" />
+		</property>
+		<property name="projectTypeService">
+			<ref bean="ProjectTypeService" />
+		</property>
+		<property name="projectManagerService">
+			<ref bean="ProjectManagerService" />
+		</property>
+		<property name="teacherAuthorityService">
+			<ref bean="TeacherAuthorityService" />
+		</property>
+	</bean>
+	
+	<bean id="ProjectTypeService" class="com.stoms.service.ProjectTypeService"
+		scope="prototype">
+		<property name="projectTypeDAO">
+			<ref bean="ProjectTypeDAO" />
+		</property>
+	</bean>
+	
+	<bean id="ProjectTypeMaintainceAction" class="com.stoms.action.ProjectTypeMaintainceAction"
+		scope="prototype">
+		<property name="projectTypeService">
+			<ref bean="ProjectTypeService" />
+		</property>
+	</bean>
+	
+	<bean id="DepartmentService" class="com.stoms.service.DepartmentService"
+		scope="prototype">
+		<property name="departmentDAO">
+			<ref bean="DepartmentDAO" />
+		</property>
+	</bean>
+	
+	<bean id="DepartmentMaintainceAction" class="com.stoms.action.DepartmentMaintainceAction"
+		scope="prototype">
+		<property name="departmentService">
+			<ref bean="DepartmentService" />
+		</property>
+	</bean>
+	
+	<bean id="ProjectManagerService" class="com.stoms.service.ProjectManagerService"
+		scope="prototype">
+		<property name="projectManagerDAO">
+			<ref bean="ProjectManagerDAO" />
+		</property>
+	</bean>
+	
+	<bean id="AddOutlayService" class="com.stoms.service.AddOutlayService"
+		scope="prototype">
+		<property name="itemDAO">
+			<ref bean="ItemDAO" />
+		</property>
+		<property name="oldAddOutlayDAO">
+			<ref bean="OldAddOutlayDAO" />
+		</property>
+		<property name="addOutlayDAO">
+			<ref bean="AddOutlayDAO" />
+		</property>
+		<property name="projectManagerDAO">
+			<ref bean="ProjectManagerDAO" />
+		</property>
+		<property name="projectTypeDAO">
+			<ref bean="ProjectTypeDAO" />
+		</property>
+		<property name="departmentDAO">
+			<ref bean="DepartmentDAO" />
+		</property>
+	</bean>
+	
+	<bean id="AddOutlayAction" class="com.stoms.action.AddOutlayAction"
+		scope="prototype">
+		<property name="addOutlayService">
+			<ref bean="AddOutlayService" />
+		</property>
+		<property name="itemService">
+			<ref bean="ItemService" />
+		</property>
+		<property name="projectTypeService">
+			<ref bean="ProjectTypeService" />
+		</property>
+		<property name="teacherService">
+			<ref bean="TeacherService" />
+		</property>
+	</bean>
+	
+	<bean id="ItemStatisticsQueryAction" class="com.stoms.action.ItemStatisticsQueryAction"
+		scope="prototype">
+		<property name="teacherStatisticsService">
+			<ref bean="TeacherStatisticsService" />
+		</property>
+	</bean>
+	
+	<bean id="UniversityLevelStatisticsQueryAction" class="com.stoms.action.UniversityLevelStatisticsQueryAction"
+		scope="prototype">
+		<property name="projectTypeService">
+			<ref bean="ProjectTypeService" />
+		</property>
+		<property name="statisticsCampusOutlayService">
+			<ref bean="StatisticsCampusOutlayService" />
+		</property>
+	</bean>
+	
+	<bean id="TeacherOutlayStatisticsQueryAction" class="com.stoms.action.TeacherOutlayStatisticsQueryAction"
+		scope="prototype">
+		<property name="teacherStatisticsOutlayService">
+			<ref bean="TeacherStatisticsOutlayService" />
+		</property>
+	</bean>
+	
+</beans>

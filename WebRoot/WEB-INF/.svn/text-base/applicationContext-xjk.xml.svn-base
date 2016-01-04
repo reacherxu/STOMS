@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<bean id="ProvincialFundAction" class="com.stoms.action.ProvincialFundAction"
+		scope="prototype">
+		<property name="provincialFundService">
+			<ref bean="ProvincialFundService" />
+		</property>
+	</bean>
+	
+	<bean id="ProvincialFundService" class="com.stoms.service.ProvincialFundService"
+		scope="prototype">
+		<property name="actualFundItemDAO">
+			<ref bean="ActualFundItemDAO" />
+		</property>
+		<property name="actualFundBudgetDAO">
+			<ref bean="ActualFundBudgetDAO" />
+		</property>
+		<property name="itemDAO">
+			<ref bean="ItemDAO" />
+		</property>
+	</bean>
+	
+	<bean id="ProvincialOutlayAction" class="com.stoms.action.ProvincialOutlayAction"
+		scope="prototype">
+		<property name="provincialOutlayService">
+			<ref bean="ProvincialOutlayService" />
+		</property>
+	</bean>
+	
+	<bean id="ProvincialOutlayService" class="com.stoms.service.ProvincialOutlayService"
+		scope="prototype">
+		<property name="actualFundBudgetDAO">
+			<ref bean="ActualFundBudgetDAO" />
+		</property>
+		<property name="agencyFundOutlayDAO">
+			<ref bean="AgencyFundOutlayDAO" />
+		</property>
+		<property name="selfFundOutlayDAO">
+			<ref bean="SelfFundOutlayDAO" />
+		</property>
+		<property name="sumFundOutlayDAO">
+			<ref bean="SumFundOutlayDAO" />
+		</property>	
+		<property name="itemDAO">
+			<ref bean="ItemDAO" />
+		</property>
+		<property name="columnSumOutlayService">
+			<ref bean="ColumnSumOutlayService" />
+		</property>
+	</bean>
+	
+	<bean id="ProjectInfoAuditAction" class="com.stoms.action.ProjectInfoAuditAction"
+		scope="prototype">
+		<property name="projectInfoAuditService">
+			<ref bean="ProjectInfoAuditService" />
+		</property>
+	</bean>
+	
+	<bean id="ProjectInfoAuditService" class="com.stoms.service.ProjectInfoAuditService"
+		scope="prototype">
+		<property name="itemDAO">
+			<ref bean="ItemDAO" />
+		</property>
+	</bean>
+	
+	<bean id="ProjectQueryAdminAction" class="com.stoms.action.ProjectQueryAdminAction"
+		scope="prototype">
+		<property name="projectQueryAdminService">
+			<ref bean="ProjectQueryAdminService" />
+		</property>
+	</bean>
+	
+	<bean id="ProjectQueryAdminService" class="com.stoms.service.ProjectQueryAdminService"
+		scope="prototype">
+		<property name="departmentService">
+			<ref bean="DepartmentService" />
+		</property>
+		<property name="projectTypeService">
+			<ref bean="ProjectTypeService" />
+		</property>
+		<property name="itemService">
+			<ref bean="ItemService" />
+		</property>
+	</bean>
+	
+	<bean id="InAccountQueryAdminAction" class="com.stoms.action.InAccountQueryAdminAction"
+		scope="prototype">
+		<property name="inAccountQueryAdminService">
+			<ref bean="InAccountQueryAdminService" />
+		</property>
+	</bean>
+	
+	<bean id="InAccountQueryAdminService" class="com.stoms.service.InAccountQueryAdminService"
+		scope="prototype">
+		<property name="departmentService">
+			<ref bean="DepartmentService" />
+		</property>
+		<property name="projectTypeService">
+			<ref bean="ProjectTypeService" />
+		</property>
+		<property name="addOutlayService">
+			<ref bean="AddOutlayService" />
+		</property>
+	</bean>
+	
+</beans>

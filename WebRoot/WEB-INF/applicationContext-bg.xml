@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<bean id="ItemAction" class="com.stoms.action.ItemAction"
+		scope="prototype">
+		<property name="itemService">
+			<ref bean="ItemService" />
+		</property>
+	</bean>
+	<bean id="ItemService" class="com.stoms.service.ItemService"
+		scope="prototype">
+		<property name="projectTypeDAO">
+			<ref bean="ProjectTypeDAO" />
+		</property>
+		<property name="nationalFundItemDAO">
+			<ref bean="NationalFundItemDAO" />
+		</property>
+		<property name="departmentDAO">
+			<ref bean="DepartmentDAO" />
+		</property>
+		<property name="itemDAO">
+			<ref bean="ItemDAO" />
+		</property>
+		<property name="socialScienceItemDAO">
+			<ref bean="SocialScienceItemDAO" />
+		</property>
+		<property name="a863itemDAO">
+			<ref bean="A863itemDAO" />
+		</property>
+		<property name="actualFundItemDAO">
+			<ref bean="ActualFundItemDAO" />
+		</property>
+		<property name="teacherDAO">
+			<ref bean="TeacherDAO" />
+		</property>
+	</bean>
+	
+	<bean id="BudgetAction" class="com.stoms.action.BudgetAction"
+		scope="prototype">
+		<property name="itemService">
+			<ref bean="ItemService" />
+		</property>
+		<property name="budgetService">
+			<ref bean="BudgetService" />
+		</property>
+		<property name="budgetMappingService">
+			<ref bean="BudgetMappingService" />
+		</property>
+		<property name="expenditureService">
+			<ref bean="ExpenditureService" />
+		</property>
+		
+	</bean>
+	
+	
+	<bean id="BudgetService" class="com.stoms.service.BudgetService"
+		scope="prototype">
+		<property name="budgetDAO">
+			<ref bean="BudgetDAO" />
+		</property>
+	</bean>
+	
+	<bean id="BudgetMappingAction" class="com.stoms.action.BudgetMappingAction"
+		scope="prototype">
+		<property name="budgetMappingService">
+			<ref bean="BudgetMappingService" />
+		</property>
+		
+	</bean>
+	<bean id="BudgetMappingService" class="com.stoms.service.BudgetMappingService"
+		scope="prototype">
+		<property name="budgetMappingDAO">
+			<ref bean="BudgetMappingDAO" />
+		</property>
+	</bean>
+	<bean id="ExpenditureService" class="com.stoms.service.ExpenditureService"
+		scope="prototype">
+		<property name="expenditureDAO">
+			<ref bean="ExpenditureDAO" />
+		</property>
+	</bean>
+</beans>

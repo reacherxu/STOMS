@@ -1,0 +1,76 @@
+{
+	"menu" : [
+		{
+			"name":"projectManagement",
+			"showName":"项目管理",
+			"items":[
+				{
+					"name":"projectRegistration",
+					"showName":"项目登记",
+					"href":"Page/Teacher/projectManagement/projectRegistrationList.jsp"
+				},
+				{
+					"name":"projectVerification",
+					"showName":"项目确认",
+					"href":"Page/Teacher/projectManagement/projectVerificationList.jsp"
+				},
+				{
+					"name":"budgetAdjustment",
+					"showName":"预算调整",
+					"href":"Page/Teacher/projectManagement/budgetAdjustment.jsp"
+				}
+			]
+		},
+		
+		{
+			"name":"outlayManagement",
+			"showName":"经费管理",
+			"items":[
+				{
+					"name":"inAccountApplication",
+					"showName":"入账申请",
+					"href":"Page/Teacher/outlayManagement/inAccountApplication.jsp"
+				},
+				{
+					"name":"payRegister",
+					"showName":"支出登记",
+					"href":"Page/Teacher/outlayManagement/payRegister.jsp"
+				}
+			]
+		},
+		
+		{
+			"name":"infoQuery",
+			"showName":"信息查询",
+			"items":[
+				{
+					"name":"projectQuery",
+					"showName":"项目查询",
+					"href":"Page/Teacher/infoQuery/projectQuery.jsp"
+				},
+				{
+					"name":"outlayStatisticsQuery",
+					"showName":"经费统计查询",
+					"href":"Page/Teacher/infoQuery/outlayStatisticsQuery.jsp"
+				}
+			]
+		},
+		
+		{
+			"name":"userInfo",
+			"showName":"用户信息",
+			"items":[
+				{
+					"name":"personalInfo",
+					"showName":"个人信息",
+					"href":"Page/Common/userInfo/personalInfo.jsp"
+				},
+				{
+					"name":"teacherPasswordChange",
+					"showName":"密码修改",
+					"href":"Page/Common/userInfo/teacherPasswordChange.jsp"
+				}
+			]
+		}
+	]
+}
